@@ -81,6 +81,7 @@ namespace CP2.API.Controllers
         /// <summary>
         /// Metodos para editar o vendedor
         /// </summary>
+        /// <param name="id"> Identificador do Vendedor</param>
         /// <param name="entity"> Modelo de dados do Vendedor</param>
         /// <returns></returns>
         [HttpPut("{id}")]

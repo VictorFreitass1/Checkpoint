@@ -1,6 +1,5 @@
 ﻿using CP2.Domain.Interfaces.Dtos;
 using FluentValidation;
-using System.Globalization;
 
 namespace CP2.Application.Dtos
 {

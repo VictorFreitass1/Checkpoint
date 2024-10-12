@@ -81,6 +81,7 @@ namespace CP2.API.Controllers
         /// <summary>
         /// Metodos para editar o fornecedor
         /// </summary>
+        /// <param name="id"> Identificador do Fornecedor</param>
         /// <param name="entity"> Modelo de dados do Fornecedor</param>
         /// <returns></returns>
         [HttpPut("{id}")]
