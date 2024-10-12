@@ -5,6 +5,10 @@ namespace CP2.Domain.Interfaces
 {
     public interface IVendedorApplicationService
     {
-
+        IEnumerable<VendedorEntity> ObterTodosVendedores();
+        VendedorEntity? ObterVendedorPorId(int id);
+        VendedorEntity? SalvarDadosVendedor(IVendedorDto entity);
+        VendedorEntity? EditarDadosVendedor(int id, IVendedorDto entity);
+        VendedorEntity? DeletarDadosVendedor(int id);
     }
 }

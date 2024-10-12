@@ -25,38 +25,46 @@ namespace CP2.API.Controllers
         [Produces<IEnumerable<FornecedorEntity>>]
         public IActionResult Get()
         {
-            var objModel = _applicationService.ObterTodosFornecedores();
+            var fornecedor = _applicationService.ObterTodosFornecedores();
 
-            if (objModel is not null)
-                return Ok(objModel);
+            if (fornecedor is not null)
+                return Ok(fornecedor);
 
             return BadRequest("Não foi possivel obter os dados");
         }
 
-
+        /// <summary>
+        /// Metodo para obter um fornecedor
+        /// </summary>
+        /// <param name="id"> Identificador do fornecedor</param>
+        /// <returns></returns>
         [HttpGet("{id}")]
         [Produces<FornecedorEntity>]
         public IActionResult GetPorId(int id)
         {
-            var objModel = _applicationService.ObterFornecedorPorId(id);
+            var fornecedor = _applicationService.ObterFornecedorPorId(id);
 
-            if (objModel is not null)
-                return Ok(objModel);
+            if (fornecedor is not null)
+                return Ok(fornecedor);
 
             return BadRequest("Não foi possivel obter os dados");
         }
 
-
+        /// <summary>
+        /// Metodos para salvar o fornecedor
+        /// </summary>
+        /// <param name="entity"> Modelo de dados do Fornecedor</param>
+        /// <returns></returns>
         [HttpPost]
         [Produces<FornecedorEntity>]
         public IActionResult Post([FromBody] FornecedorDto entity)
         {
             try
             {
-                var objModel = _applicationService.SalvarDadosFornecedor(entity);
+                var fornecedor = _applicationService.SalvarDadosFornecedor(entity);
 
-                if (objModel is not null)
-                    return Ok(objModel);
+                if (fornecedor is not null)
+                    return Ok(fornecedor);
 
                 return BadRequest("Não foi possivel salvar os dados");
             }
@@ -70,16 +78,21 @@ namespace CP2.API.Controllers
             }
         }
 
+        /// <summary>
+        /// Metodos para editar o fornecedor
+        /// </summary>
+        /// <param name="entity"> Modelo de dados do Fornecedor</param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         [Produces<FornecedorEntity>]
         public IActionResult Put(int id, [FromBody] FornecedorDto entity)
         {
             try
             {
-                var objModel = _applicationService.EditarDadosFornecedor(id, entity);
+                var fornecedor = _applicationService.EditarDadosFornecedor(id, entity);
 
-                if (objModel is not null)
-                    return Ok(objModel);
+                if (fornecedor is not null)
+                    return Ok(fornecedor);
 
                 return BadRequest("Não foi possivel salvar os dados");
             }
@@ -93,15 +106,19 @@ namespace CP2.API.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Metodo para deletar um fornecedor
+        /// </summary>
+        /// <param name="id"> Identificador do fornecedor</param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         [Produces<FornecedorEntity>]
         public IActionResult Delete(int id)
         {
-            var objModel = _applicationService.DeletarDadosFornecedor(id);
+            var fornecedor = _applicationService.DeletarDadosFornecedor(id);
 
-            if (objModel is not null)
-                return Ok(objModel);
+            if (fornecedor is not null)
+                return Ok(fornecedor);
 
             return BadRequest("Não foi possivel deletar os dados");
         }

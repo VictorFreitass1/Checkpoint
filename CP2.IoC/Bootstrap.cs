@@ -16,8 +16,12 @@ namespace CP2.IoC
                 x.UseOracle(configuration["ConnectionStrings:Oracle"]);
             });
 
-
             services.AddTransient<IFornecedorRepository, FornecedorRepository>();
+            services.AddTransient<IVendedorRepository, VendedorRepository>();
+
+
+            services.AddTransient<IFornecedorApplicationService, FornecedorApplicationService>();
+            services.AddTransient<IVendedorApplicationService, VendedorApplicationService>();
         }
     }
 }
